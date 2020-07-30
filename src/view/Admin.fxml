@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.AdminController"
+	alignment="center" spacing="10" styleClass="root" prefWidth="800.0">
+
+
+	<stylesheets>
+		<URL value="@kiosk.css" />
+	</stylesheets>
+
+
+	<HBox spacing="10">
+		<ImageView>
+			<image>
+				<Image url="@movie_icon.png" />
+			</image>
+		</ImageView>
+		<VBox alignment="center">
+			<Label styleClass="h1" text="Administration Menu"></Label>
+		</VBox>
+
+	</HBox>
+
+	<VBox alignment="center" spacing="10">
+		<GridPane alignment="center" vgap="10" hgap="10">
+			<!-- Left side of the grid -->
+			<Label styleClass="h2" text="Manage Customers:"
+			GridPane.columnIndex="0" GridPane.rowIndex="0"></Label>
+			<Button styleClass="menuButton" text="View All"
+				GridPane.columnIndex="0" GridPane.rowIndex="1"
+				onAction="#customerViewAll"></Button>
+			<Button styleClass="menuButton" text="Add"
+				GridPane.columnIndex="0" GridPane.rowIndex="2"
+				onAction="#customerAdd"></Button>
+			<Button styleClass="menuButton" text="Remove"
+				GridPane.columnIndex="0" GridPane.rowIndex="3"
+				onAction="#customerRemove"></Button>
+
+			<!-- Right side -->
+			<Label styleClass="h2" text="Manage Movies:"
+			GridPane.columnIndex="1" GridPane.rowIndex="0"></Label>
+			<Button styleClass="menuButton" text="View All"
+				GridPane.columnIndex="1" GridPane.rowIndex="1"
+				onAction="#movieViewAll"></Button>
+			<Button styleClass="menuButton" text="Add"
+				GridPane.columnIndex="1" GridPane.rowIndex="2"
+				onAction="#movieAdd"></Button>
+			<Button styleClass="menuButton" text="Remove"
+				GridPane.columnIndex="1" GridPane.rowIndex="3"
+				onAction="#movieRemove"></Button>
+
+
+		</GridPane>
+		<Button text="Exit" onAction="#exit"></Button>
+	</VBox>
+
+
+
+</VBox>

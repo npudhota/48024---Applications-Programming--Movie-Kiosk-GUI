@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ShowAllCustomersController"
+	alignment="center" spacing="10" styleClass="root" prefWidth="800.0">
+
+
+	<stylesheets>
+		<URL value="@kiosk.css" />
+	</stylesheets>
+
+
+	<HBox spacing="10">
+		<ImageView>
+			<image>
+				<Image url="@movie_icon.png" />
+			</image>
+		</ImageView>
+		<VBox alignment="center">
+			<Label styleClass="h1" text="All Customers"></Label>
+		</VBox>
+
+	</HBox>
+
+	<TableView items="${controller.kiosk.customers}">
+		<placeholder>
+			<Label text="No results found."></Label>
+		</placeholder>
+		<columns>
+			<TableColumn text="ID">
+				<cellValueFactory>
+					<PropertyValueFactory property="id" />
+				</cellValueFactory>
+			</TableColumn>
+			<TableColumn text="Name">
+				<cellValueFactory>
+					<PropertyValueFactory property="name" />
+				</cellValueFactory>
+			</TableColumn>
+			<TableColumn text="Balance">
+				<cellValueFactory>
+					<PropertyValueFactory property="balance" />
+				</cellValueFactory>
+			</TableColumn>
+		</columns>
+	</TableView>
+
+	<Button text="Exit" onAction="#exit"></Button>
+
+
+
+</VBox>

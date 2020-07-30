@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.RentMovieController"
+	alignment="center" spacing="10" styleClass="root" prefWidth="800.0">
+
+
+	<stylesheets>
+		<URL value="@kiosk.css" />
+	</stylesheets>
+
+
+	<HBox spacing="10">
+		<ImageView>
+			<image>
+				<Image url="@movie_icon.png" />
+			</image>
+		</ImageView>
+		<VBox alignment="center">
+			<Label styleClass="h1" text="Catalogue"></Label>
+		</VBox>
+
+	</HBox>
+
+	<HBox alignment="center" spacing="10">
+		<Text>Customer ID:</Text>
+		<TextField fx:id="textID"></TextField>
+		<Button fx:id="buttonID" text="Select Customer" onAction="#setCustomer"></Button>
+	</HBox>
+
+	<VBox alignment="center">
+		<Label styleClass="h2" text="Available Movies"></Label>
+		<TableView fx:id="movies" prefHeight="200">
+			<placeholder>
+				<Label text="No results found."></Label>
+			</placeholder>
+			<columns>
+				<TableColumn text="Title">
+					<cellValueFactory>
+						<PropertyValueFactory property="title" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="Year">
+					<cellValueFactory>
+						<PropertyValueFactory property="year" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="Genre">
+					<cellValueFactory>
+						<PropertyValueFactory property="genre" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="Price">
+					<cellValueFactory>
+						<PropertyValueFactory property="price" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+	</VBox>
+
+	<Button fx:id="rentButton" text="Rent Selected Movie" onAction="#rentMovie"></Button>
+	<Text fx:id="feedback"></Text>
+	<Button text="Close" onAction="#close"></Button>
+
+
+</VBox>
